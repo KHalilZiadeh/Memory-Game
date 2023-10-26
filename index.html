@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles.css" />
+    <link
+      rel="stylesheet"
+      href="./icons/fontawesome-free-6.4.0-web/css/all.min.css"
+    />
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <header>
+      <h1>Memory Game</h1>
+      <button>
+        <i class="fa-solid fa-rotate-left"></i>
+      </button>
+    </header>
+    <main>
+      <aside>
+        <div id="b" data-number="8" data-grid="3">Beginner</div>
+        <div id="i" data-number="16" data-grid="4">Intermidate</div>
+        <div id="m" data-number="24" data-grid="5">Master</div>
+      </aside>
+      <div class="game-area">
+        <div class="cards"></div>
+      </div>
+    </main>
+    <script src="./Main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-image: linear-gradient(180deg, #5c5470, #352f44 15%);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+i:hover {
+  animation: rotate 1s infinite forwards;
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #faf0e6;
+}
+
+header button {
+  all: unset;
+  font-size: 3rem;
+  color: #faf0e6;
+  padding: 10px;
+  cursor: pointer;
+}
+
+main {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: calc(15vw - 10px) calc(85vw - 10px);
+  gap: 20px;
+}
+
+main aside {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  font-size: 2.5rem;
+  color: #faf0e6;
+  position: relative;
+  --indi: 33%;
+}
+
+main aside::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: var(--indi);
+  background-color: #b9b4c7;
+  right: 0;
+  bottom: 0;
+  transition: 1s;
+}
+
+main aside div {
+  cursor: pointer;
+}
+
+main .game-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .game-area .cards {
+  width: 600px;
+  height: 600px;
+  display: grid;
+  gap: 10px;
+}
+
+main .game-area .cards .card {
+  background-color: #352f44;
+  color: #faf0e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: 1px solid #5c5470;
+  margin: auto;
+  transition: 0.3s;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.clicked {
+  transform-origin: center;
+  transform: rotateY(180deg);
+}
+
+div.correct {
+  box-shadow: 0 0 10px 1px #faf0e6;
+  animation: pulse 2s ease-in-out infinite forwards;
+}
+
+@media (max-width: 376px) {
+  html {
+    font-family: sans-serif;
+    font-size: 62.5%;
+  }
+
+  body {
+    background-image: linear-gradient(180deg, #5c5470, #352f44 15%);
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+  header {
+    padding: 10px;
+    text-align: center;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    color: #faf0e6;
+  }
+
+  header button {
+    all: unset;
+    font-size: 1.5rem;
+    color: #faf0e6;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  main {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: calc(15vw - 10px) calc(85vw - 10px);
+    gap: 20px;
+  }
+
+  main aside {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    font-size: 1rem;
+    color: #faf0e6;
+    position: relative;
+    --indi: 66%;
+  }
+
+  main aside::before {
+    content: "";
+    position: absolute;
+    width: var(--indi);
+    height: 1px;
+    background-color: #b9b4c7;
+    left: 0;
+    bottom: 0;
+    transition: 1s;
+  }
+
+  main .game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 355px;
+    height: 355px;
+    margin-top: calc((85vh - 355px) / 2);
+    margin-bottom: calc((85vh - 355px) / 2);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  main .game-area .cards {
+    width: 355px;
+    height: 355px;
+    display: grid;
+    gap: 10px;
+  }
+
+  main .game-area .cards .card {
+    background-color: #352f44;
+    color: #faf0e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 1rem;
+    border: 1px solid #5c5470;
+    margin: auto;
+    transition: 0.3s;
+    font-size: 3rem;
+  }
+
+  .clicked {
+    transform-origin: center;
+    transform: rotateY(180deg);
+  }
+
+  div.correct {
+    box-shadow: 0 0 10px 1px #faf0e6;
+    animation: pulse 2s ease-in-out infinite forwards;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    rotate: -360deg;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px 1px #faf0e6;
+  }
+  50% {
+    box-shadow: 0 0 0 0 #faf0e6;
+  }
+  100% {
+    box-shadow: 0 0 10px 1px #faf0e6;
+  }
+}
