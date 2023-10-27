@@ -103,19 +103,24 @@ main .game-area .cards .card {
   transition: 0.3s;
   font-size: 3rem;
   cursor: pointer;
+  transform-origin: center;
 }
 
-.clicked {
-  transform-origin: center;
+.flipped {
   transform: rotateY(180deg);
 }
 
 div.correct {
+  transform: rotateY(180deg);
   box-shadow: 0 0 10px 1px #faf0e6;
   animation: pulse 2s ease-in-out infinite forwards;
 }
 
-@media (max-width: 376px) {
+.no-click {
+  pointer-events: none;
+}
+
+@media (max-width: 1081px) {
   html {
     font-family: sans-serif;
     font-size: 62.5%;
