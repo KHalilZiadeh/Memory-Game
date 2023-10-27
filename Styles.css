@@ -189,17 +189,17 @@ div.correct {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 355px;
-    height: 355px;
-    margin-top: calc((85vh - 355px) / 2);
-    margin-bottom: calc((85vh - 355px) / 2);
+    width: 1060px;
+    height: 1060px;
+    margin-top: calc((85vh - 1060px) / 2);
+    margin-bottom: calc((85vh - 1060px) / 2);
     margin-right: auto;
     margin-left: auto;
   }
 
   main .game-area .cards {
-    width: 355px;
-    height: 355px;
+    width: 1060px;
+    height: 1060px;
     display: grid;
     gap: 10px;
   }
