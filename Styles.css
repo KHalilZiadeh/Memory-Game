@@ -14,10 +14,10 @@ html {
 body {
   background-image: linear-gradient(180deg, #5c5470, #352f44 10%);
   background-repeat: no-repeat;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr 9fr;
+  grid-template-rows: 10% 90%;
 }
 
 i:hover {
@@ -26,7 +26,6 @@ i:hover {
 
 header {
   padding: 10px;
-  height: 10%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -46,9 +45,8 @@ header button {
 }
 
 main {
-  height: 90vh;
   display: grid;
-  grid-template-columns: 15vw 85vw;
+  grid-template-columns: 15% 85%;
   gap: 20px;
 }
 
@@ -82,7 +80,7 @@ main .game-area {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(85vw - 20px);
+  width: calc(85% - 20px);
 }
 /* calculate available area depending on orintation */
 
@@ -126,12 +124,7 @@ div.correct {
     font-size: 62.5%;
   }
 
-  header {
-    height: 10%;
-  }
-
   main {
-    height: calc(90% - 20px);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 15% 85%;
