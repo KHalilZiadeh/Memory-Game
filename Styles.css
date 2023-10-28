@@ -46,9 +46,9 @@ header button {
 }
 
 main {
-  height: 90%;
+  height: 90vh;
   display: grid;
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 15vw 85vw;
   gap: 20px;
 }
 
@@ -82,7 +82,7 @@ main .game-area {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(85% - 20px);
+  width: calc(85vw - 20px);
 }
 /* calculate available area depending on orintation */
 
@@ -124,6 +124,10 @@ div.correct {
 @media (orientation: portrait) {
   html {
     font-size: 62.5%;
+  }
+
+  header {
+    height: 10%;
   }
 
   main {
