@@ -125,6 +125,7 @@ div.correct {
   }
 
   main {
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 15% 85%;
@@ -157,6 +158,7 @@ div.correct {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
   }
 }
 
