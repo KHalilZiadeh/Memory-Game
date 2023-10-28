@@ -14,6 +14,7 @@ html {
 body {
   background-image: linear-gradient(180deg, #5c5470, #352f44 10%);
   background-repeat: no-repeat;
+  height: 100%;
   display: grid;
   grid-template-rows: 1fr 9fr;
 }
@@ -122,10 +123,6 @@ div.correct {
 @media (orientation: portrait) {
   html {
     font-size: 62.5%;
-  }
-
-  body {
-    height: 100%;
   }
 
   main {
