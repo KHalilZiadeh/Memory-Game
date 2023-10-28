@@ -35,6 +35,36 @@ let rstBtn = document.querySelector("button");
 let levels = document.querySelectorAll("aside div");
 let aside = document.querySelector("aside");
 
+let sOrientation = window.matchMedia("(orientation: portrait)");
+
+console.log(typeof sOrientation);
+
+sOrientation.addEventListener("change", (e) => {
+  updateCardDimension(e.matches);
+  createGrid();
+  cards.forEach((card) => {
+    card.style.width = `${cardDimensions}px`;
+    card.style.height = `${cardDimensions}px`;
+  });
+});
+
+function updateCardDimension(bol) {
+  console.log(innerHeight);
+  if (bol) {
+    cardsContainer.style.width = `${innerWidth - 20}px`;
+    cardsContainer.style.height = `${innerWidth - 20}px`;
+    cardDimensions = (innerWidth - 20 - (rowsNumber - 1) * 10) / rowsNumber;
+    console.log(cardDimensions);
+  } else {
+    console.log(innerHeight);
+    cardsContainer.style.width = `${innerHeight * 0.9 - 20}px`;
+    cardsContainer.style.height = `${innerHeight * 0.9 - 20}px`;
+    cardDimensions =
+      (innerHeight * 0.9 - 20 - (rowsNumber - 1) * 10) / rowsNumber;
+    console.log(cardDimensions);
+  }
+}
+
 function getLevel() {
   if (
     sessionStorage.getItem("cardsNumber") &&
@@ -57,16 +87,8 @@ function getLevelOnClick(e) {
 }
 
 function createGrid() {
-  if (window.innerWidth > 1080) {
-    cardsArea = 600;
-  } else {
-    cardsArea = window.innerWidth - 20;
-  }
-
   cardsContainer.style.gridTemplateColumns = `repeat(${rowsNumber}, 1fr)`;
   cardsContainer.style.gridTemplaterows = `repeat(${rowsNumber}, 1fr)`;
-
-  cardDimensions = (cardsArea - (rowsNumber - 1) * 10) / rowsNumber;
 }
 
 function fillSet(number) {
@@ -158,6 +180,7 @@ function addFlipped(e) {
   e.firstChild.classList.add("flipped");
   e.firstChild.innerHTML = `${e.dataset.symbol}`;
 }
+
 function addFlippedOnclick(e) {
   e.currentTarget.classList.add("flipped");
   e.currentTarget.firstChild.classList.add("flipped");
@@ -190,6 +213,7 @@ function checkMatch(cardOne, cardTwo) {
 
 getLevel();
 updatelevel();
+updateCardDimension(sOrientation.matches);
 createGrid();
 fillSet(cardsNumber / 2);
 createSymbolsArray(symbols);
@@ -204,6 +228,7 @@ levels.forEach((level) => {
   level.addEventListener("click", (e) => {
     getLevelOnClick(e);
     updatelevel();
+    updateCardDimension(sOrientation.matches);
     createGrid();
     fillSet(cardsNumber / 2);
     createSymbolsArray(symbols);
@@ -214,7 +239,7 @@ levels.forEach((level) => {
 
 cards.forEach((card) => {
   card.addEventListener("click", (e) => {
-    addFlipped(e);
+    addFlippedOnclick(e);
     if (document.querySelectorAll("div.flipped").length == 2) {
       cardsContainer.classList.add("no-click");
       checkMatch(
