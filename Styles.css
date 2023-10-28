@@ -127,7 +127,7 @@ div.correct {
   main {
     height: calc(100% - 20px);
     display: grid;
-    grid-template-columns: 100vw;
+    grid-template-columns: 100%;
     grid-template-rows: 15% 85%;
     gap: 20px;
   }
