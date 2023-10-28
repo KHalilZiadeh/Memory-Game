@@ -159,8 +159,6 @@ div.correct {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: auto;
-    margin-left: auto;
     width: 100%;
   }
 }
