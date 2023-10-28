@@ -1,3 +1,10 @@
+:root {
+  --dark-color: #352f44;
+  --light-dark-color: #5c5470;
+  --grey-color: #b9b4c7;
+  --light-color: #faf0e6;
+}
+
 *,
 *::before,
 *::after {
@@ -12,7 +19,11 @@ html {
 }
 
 body {
-  background-image: linear-gradient(180deg, #5c5470, #352f44 10%);
+  background-image: linear-gradient(
+    180deg,
+    var(--light-dark-color),
+    var(--dark-color) 10%
+  );
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
@@ -33,13 +44,13 @@ header {
 
 header h1 {
   font-size: 3rem;
-  color: #faf0e6;
+  color: var(--light-color);
 }
 
 header button {
   all: unset;
   font-size: 3rem;
-  color: #faf0e6;
+  color: var(--light-color);
   padding: 10px;
   cursor: pointer;
 }
@@ -56,7 +67,7 @@ main aside {
   justify-content: space-around;
   flex-direction: column-reverse;
   font-size: 2.5rem;
-  color: #faf0e6;
+  color: var(--light-color);
   position: relative;
   --indi: 33%;
 }
@@ -66,7 +77,7 @@ main aside::before {
   position: absolute;
   width: 1px;
   height: var(--indi);
-  background-color: #b9b4c7;
+  background-color: var(--grey-color);
   right: 0;
   bottom: 0;
   transition: 1s;
@@ -90,14 +101,14 @@ main .game-area .cards {
 }
 
 main .game-area .cards .card {
-  background-color: #352f44;
-  color: #faf0e6;
+  background-color: var(--dark-color);
+  color: var(--light-color);
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   border-radius: 1rem;
-  border: 1px solid #5c5470;
+  border: 1px solid var(--light-dark-color);
   margin: auto;
   transition: 0.3s;
   font-size: 3rem;
@@ -111,7 +122,7 @@ main .game-area .cards .card {
 
 div.correct {
   transform: rotateY(180deg);
-  box-shadow: 0 0 10px 1px #faf0e6;
+  box-shadow: 0 0 10px 1px var(--light-color);
   animation: pulse 2s ease-in-out infinite forwards;
 }
 
@@ -139,7 +150,7 @@ div.correct {
     justify-content: space-around;
     flex-direction: row;
     font-size: 2.5rem;
-    color: #faf0e6;
+    color: var(--light-color);
     position: relative;
   }
 
@@ -148,7 +159,7 @@ div.correct {
     position: absolute;
     height: 1px;
     width: var(--indi);
-    background-color: #b9b4c7;
+    background-color: var(--grey-color);
     bottom: 0;
     left: 0;
     transition: 1s;
@@ -172,12 +183,12 @@ div.correct {
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 10px 1px #faf0e6;
+    box-shadow: 0 0 10px 1px var(--light-color);
   }
   50% {
-    box-shadow: 0 0 0 0 #faf0e6;
+    box-shadow: 0 0 0 0 var(--light-color);
   }
   100% {
-    box-shadow: 0 0 10px 1px #faf0e6;
+    box-shadow: 0 0 10px 1px var(--light-color);
   }
 }

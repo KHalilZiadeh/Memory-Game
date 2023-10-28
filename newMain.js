@@ -1,4 +1,3 @@
-console.time("all");
 let allSymbols = [
   "~",
   "!",
@@ -37,8 +36,6 @@ let aside = document.querySelector("aside");
 
 let sOrientation = window.matchMedia("(orientation: portrait)");
 
-console.log(typeof sOrientation);
-
 sOrientation.addEventListener("change", (e) => {
   updateCardDimension(e.matches);
   createGrid();
@@ -49,19 +46,15 @@ sOrientation.addEventListener("change", (e) => {
 });
 
 function updateCardDimension(bol) {
-  console.log(innerHeight);
   if (bol) {
     cardsContainer.style.width = `${innerWidth - 20}px`;
     cardsContainer.style.height = `${innerWidth - 20}px`;
     cardDimensions = (innerWidth - 20 - (rowsNumber - 1) * 10) / rowsNumber;
-    console.log(cardDimensions);
   } else {
-    console.log(innerHeight);
     cardsContainer.style.width = `${innerHeight * 0.9 - 20}px`;
     cardsContainer.style.height = `${innerHeight * 0.9 - 20}px`;
     cardDimensions =
       (innerHeight * 0.9 - 20 - (rowsNumber - 1) * 10) / rowsNumber;
-    console.log(cardDimensions);
   }
 }
 
@@ -149,6 +142,18 @@ function createCards(content) {
     cardsContainer.append(div);
   }
   cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      addFlippedOnclick(e);
+      if (document.querySelectorAll("div.flipped").length == 2) {
+        cardsContainer.classList.add("no-click");
+        checkMatch(
+          document.querySelectorAll("div.flipped")[0],
+          document.querySelectorAll("div.flipped")[1]
+        );
+      }
+    });
+  });
   symbolsArray = [];
 }
 
@@ -234,18 +239,5 @@ levels.forEach((level) => {
     createSymbolsArray(symbols);
     createCards(symbolsArray);
     onStart();
-  });
-});
-
-cards.forEach((card) => {
-  card.addEventListener("click", (e) => {
-    addFlippedOnclick(e);
-    if (document.querySelectorAll("div.flipped").length == 2) {
-      cardsContainer.classList.add("no-click");
-      checkMatch(
-        document.querySelectorAll("div.flipped")[0],
-        document.querySelectorAll("div.flipped")[1]
-      );
-    }
   });
 });
