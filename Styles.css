@@ -122,11 +122,15 @@ div.correct {
   html {
     font-size: 62.5%;
   }
+  header {
+    height: 10%;
+  }
+
   main {
-    height: 90vh;
+    height: 90%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 15vh 85vh;
+    grid-template-rows: 15% 85%;
     gap: 20px;
   }
 
