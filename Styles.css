@@ -26,7 +26,7 @@ i:hover {
 
 header {
   padding: 10px;
-  height: 10vh;
+  height: 10%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -46,9 +46,9 @@ header button {
 }
 
 main {
-  height: 90vh;
+  height: 90%;
   display: grid;
-  grid-template-columns: 15vw 85vw;
+  grid-template-columns: 15% 85%;
   gap: 20px;
 }
 
@@ -82,7 +82,7 @@ main .game-area {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(85vw - 20px);
+  width: calc(85% - 20px);
 }
 /* calculate available area depending on orintation */
 
