@@ -116,7 +116,6 @@ main .game-area .cards .card {
   cursor: pointer;
   position: relative;
   transform-origin: center;
-  width: 300px;
 }
 
 main .game-area .cards .card img {
@@ -155,7 +154,7 @@ main .game-area .cards .card.correct .back {
   z-index: 0;
 }
 
-.flipped {
+main .game-area .cards .card.flipped {
   transform: rotateY(180deg);
 }
 

@@ -66,7 +66,7 @@ function createGrid() {
 
 function fillSet(number) {
   while (imgs.size != number) {
-    let index = Math.floor(Math.random() * 14) + 1;
+    let index = Math.floor(Math.random() * 21) + 1;
     if (!imgs.has(index)) {
       imgs.add(index);
     }
@@ -103,7 +103,7 @@ function createCards(content) {
       div.classList.add("card");
 
       let img = document.createElement("img");
-      img.src = `./Assets/${content[i]}.jpg`;
+      img.src = `./Assets/${content[i]}.png`;
 
       let back = document.createElement("div");
       back.classList.add("back");
@@ -114,7 +114,7 @@ function createCards(content) {
       div.classList.add("card");
 
       let img = document.createElement("img");
-      img.src = `./Assets/${content[i - 1]}.jpg`;
+      img.src = `./Assets/${content[i - 1]}.png`;
 
       let back = document.createElement("div");
       back.classList.add("back");
