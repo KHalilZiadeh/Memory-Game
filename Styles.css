@@ -92,6 +92,7 @@ main .game-area {
   justify-content: center;
   align-items: center;
   width: calc(85% - 20px);
+  height: 100%;
 }
 /* calculate available area depending on orintation */
 
@@ -113,7 +114,45 @@ main .game-area .cards .card {
   transition: 0.3s;
   font-size: 3rem;
   cursor: pointer;
+  position: relative;
   transform-origin: center;
+  width: 300px;
+}
+
+main .game-area .cards .card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 0;
+  transition: 0.5s;
+  background-color: var(--dark-color);
+}
+
+main .game-area .cards .card .back {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  position: absolute;
+  background-color: var(--dark-color);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--light-color);
+  transition: 0.5s;
+}
+
+main .game-area .cards .card.flipped img,
+main .game-area .cards .card.correct img {
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+main .game-area .cards .card.flipped .back,
+main .game-area .cards .card.correct .back {
+  z-index: 0;
 }
 
 .flipped {
@@ -184,11 +223,14 @@ div.correct {
 @keyframes pulse {
   0% {
     box-shadow: 0 0 10px 1px var(--light-color);
+    scale: 0.95;
   }
   50% {
     box-shadow: 0 0 0 0 var(--light-color);
+    scale: 1;
   }
   100% {
     box-shadow: 0 0 10px 1px var(--light-color);
+    scale: 0.95;
   }
 }
