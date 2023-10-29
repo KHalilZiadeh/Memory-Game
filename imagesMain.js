@@ -104,6 +104,7 @@ function createCards(content) {
 
       let img = document.createElement("img");
       img.src = `./Assets/${content[i]}.png`;
+      img.alt = `Image Number ${content[i]}`;
 
       let back = document.createElement("div");
       back.classList.add("back");
@@ -115,6 +116,7 @@ function createCards(content) {
 
       let img = document.createElement("img");
       img.src = `./Assets/${content[i - 1]}.png`;
+      img.alt = `Image Number ${content[i - 1]}`;
 
       let back = document.createElement("div");
       back.classList.add("back");
